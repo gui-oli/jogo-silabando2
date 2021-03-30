@@ -30,6 +30,12 @@ body {
     min-height: 100px;
     
 }
+.devil {
+    margin-left: 10%;
+    margin-right: 10%;
+    align-items: center;
+    justify-content: center;
+}
 .card {
     background-color: #1a1a1c;
     padding: 16px;
@@ -40,7 +46,8 @@ body {
     font-weight: 600;
     font-size: 18px;
     text-align: center;
-    margin-left: 15%;
+    margin-right: 20px;
+    margin-left: 20px;
     
 }
 
@@ -59,6 +66,8 @@ body {
 .over{
     background-color: #4cd13711
 }
-.flex-container > div {
-    margin:0 28.5% 0 28.5%;
+.flex-container {
+    display: flex;
+    
+    
 }
