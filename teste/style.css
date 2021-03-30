@@ -6,17 +6,17 @@ body {
     background-color: #130f0d;
     color: white;
     text-align: center;
+    margin:auto;
 }
 .boards {
     display: flex;
-    margin: auto;
-    margin-top: 32px;
+    align-items: center;
+    justify-content: center;
 }
 .board {
     background: #141316;
     border: 1px solid #fd951f11;
     border-radius: 4px;
-
     margin: 0 16px;
 }
 .board h3 {
@@ -27,7 +27,7 @@ body {
 .dropzone {
     padding: 16px;
     min-width: 100px;
-    min-height: 106px;
+    min-height: 100px;
     
 }
 .card {
@@ -58,4 +58,7 @@ body {
 }
 .over{
     background-color: #4cd13711
+}
+.flex-container > div {
+    margin:0 28.5% 0 28.5%;
 }
