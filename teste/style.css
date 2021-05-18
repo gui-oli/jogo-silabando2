@@ -60,8 +60,7 @@ body {
     transition: 400ms;
 }
 .is-dragging {
-    cursor: hand;
-    opacity: 0.3;
+      cursor: move;
 }
 .over{
     background-color: #4cd13711

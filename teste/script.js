@@ -30,16 +30,32 @@ function dragend() {
    //this.parentElement.setAttribute('ondrop', 'false')
    const caixas = this.parentElement.className.substring(0,2)
    const silaba = this.className.substring(0,2)
-   
-    console.log(this.className)
-    console.log(caixas)
 
     if (silaba != caixas) {
 
-       console.log("Volta porque isso não é teu...")
        document.getElementById("caixa").appendChild(this)
-      
+
+       
+        
+    }else{
+
+        console.log(dropzones.length)
+        let count = 0
+     dropzones.forEach( wi => {
+         
+         
+         if (wi.children.length == 1){
+             count ++
+         }
+
+     })
+
+     count == dropzones.length ? alert("VITORIA!!!") : ""
+     
     }
+
+    
+    
 }
  /*place where we will drop cards */
  dropzones.forEach( dropzone => {
@@ -48,6 +64,11 @@ function dragend() {
      dropzone.addEventListener('dragleave', dragleave)
      dropzone.addEventListener('drop'     , drop     )
  })
+
+ function winner() {
+    console.log(this.children.className)
+
+ }
 
  function dragenter() {
 
@@ -60,8 +81,6 @@ function dragend() {
     // get dragging card
     const cardBeingDragged = document.querySelector('.is-dragging')
 
-   // alert(this.parentNode.className)
-
    
     this.appendChild(cardBeingDragged)
     
@@ -69,11 +88,8 @@ function dragend() {
  function dragleave() {
     this.classList.remove('over')
     
-    
-    
 }
 function drop() {
-    console.log("klkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk")
 
     
- }
+}
