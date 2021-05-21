@@ -73,3 +73,7 @@ body {
 .img {
     margin-right: 10px;
 }
+
+.img:hover {
+    cursor: pointer;
+}
