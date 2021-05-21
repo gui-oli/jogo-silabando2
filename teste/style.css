@@ -59,15 +59,12 @@ body {
 .card, .estilo {
     transition: 400ms;
 }
-.is-dragging {
-      cursor: move;
-}
+
 .over{
-    background-color: #4cd13711
+    background-color: #d1cf3711
 }
 .flex-container {
     display: flex;
-    
     
 }
 .img {

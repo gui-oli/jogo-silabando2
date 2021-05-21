@@ -14,10 +14,10 @@ function dragstart() {
    // console.log('CARD: Start dragging')
    dropzones.forEach( dropzone => dropzone.classList.add('highlight'))
 
+   // esse cara faz card aparecer na caixa antes de solta
    this.classList.add('is-dragging')
 }
 function drag() {
-    //console.log('CARD: Is dragging')
 }
 function dragend() {
     //console.log('CARD: Stop drag')
@@ -26,8 +26,6 @@ function dragend() {
     this.classList.remove('is-dragging')
    this.setAttribute('draggable', 'true')
    
-   //document.getElementById('card1').removeAttribute('draggable',false)
-   //this.parentElement.setAttribute('ondrop', 'false')
    const caixas = this.parentElement.className.substring(0,2)
    const silaba = this.className.substring(0,2)
 
@@ -35,26 +33,16 @@ function dragend() {
 
        document.getElementById("caixa").appendChild(this)
 
-       
-        
     }else{
-
-        console.log(dropzones.length)
         let count = 0
      dropzones.forEach( wi => {
          
-         
-         if (wi.children.length == 1){
-             count ++
-         }
-
+        if (wi.children.length == 1){
+            count ++
+        }
      })
-
-     count == dropzones.length ? alert("VITORIA!!!") : ""
-     
+     count == dropzones.length ? alert("Você é demais!!!") : ""
     }
-
-    
     
 }
  /*place where we will drop cards */
@@ -64,11 +52,6 @@ function dragend() {
      dropzone.addEventListener('dragleave', dragleave)
      dropzone.addEventListener('drop'     , drop     )
  })
-
- function winner() {
-    console.log(this.children.className)
-
- }
 
  function dragenter() {
 
