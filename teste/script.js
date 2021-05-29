@@ -52,13 +52,12 @@ function dragend() {
     this.classList.remove('is-dragging')
     this.setAttribute('draggable', 'true')
 
-    //console.log(this.parentElement.className)
-    //console.log(this.className)
+    
 
-    const caixas = this.parentElement.className.substring(0,5)
-    const silaba = this.className.substring(0,5)
-
-    if (silaba != caixas) {
+    const caixas = this.parentElement.className.split(" dropzone estilo")
+    const silaba = this.className.split(" card silaba")
+    
+    if (silaba[0] != caixas[0]) {
 
        document.getElementById("caixa").appendChild(this)
 
