@@ -1,6 +1,7 @@
-const total = data[0].nivel1.length -1
-const random = Math.floor(Math.random()*(total-0+1)+0)
+const total = data[0].nivel1.length
+const random = Math.floor(Math.random()*(total))
 const licao = data[0].nivel1[random]
+var lista = []
 
 licao.silaba.forEach(s =>{
     //board
@@ -24,8 +25,38 @@ licao.silaba.forEach(s =>{
     silaba.classList.add('card')
     silaba.classList.add('silaba')
     silaba.setAttribute('draggable', true);
-    document.getElementById("caixa").appendChild(silaba);
+    lista.push(silaba);
   })
+  licao.resto.forEach(r =>{
+  //RESTO
+  var resto = document.createElement('div');
+  resto.textContent = r;
+  resto.classList.add('card')
+  resto.classList.add('silaba')
+  resto.setAttribute('draggable', true);
+  lista.push(resto);
+  })
+  console.log(lista)
+
+  let ttSilabas = Math.floor(Math.random()*(lista.length ))
+
+  for (let index = 0; index < lista.length; index++) {
+     lista.push(lista[ttSilabas]);
+     lista.splice(ttSilabas, 1);
+
+     ttSilabas = Math.floor(Math.random()*(lista.length ))
+   } 
+
+   console.log(lista)
+
+  for (let index = 0; index < lista.length; index++) {
+
+   // Math.floor(Math.random()*(lista.length 
+    document.getElementById("caixa").appendChild(lista[index]);
+   // lista.remove[]
+  } 
+
+  
 
   document.querySelector("img").setAttribute('src', "../imagens/"+licao.palavra+".jpg" );
 
@@ -59,6 +90,7 @@ function dragend() {
     
     if (silaba[0] != caixas[0]) {
 
+        //colocar audio de erro
        document.getElementById("caixa").appendChild(this)
 
     }else{
@@ -71,6 +103,7 @@ function dragend() {
      })
      this.setAttribute('draggable', 'false')
      count == dropzones.length ? alert("Você é demais!!!") : ""
+     
     }
     
 }
